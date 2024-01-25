@@ -49,7 +49,7 @@ fun WigglesTheme(
     }
 
     MaterialTheme(
-        colorScheme = colors,
+        colorScheme = DarkColorPalette,
         typography = typography,
         shapes = shapes,
         content = content

@@ -16,8 +16,8 @@ private val Sailec = FontFamily(
 val typography = Typography(
     headlineSmall = TextStyle(
         fontFamily = Sailec,
-        fontWeight = FontWeight.W600,
-        fontSize = 30.sp
+        fontWeight = FontWeight.W700,
+        fontSize = 16.sp
     ),
     headlineMedium = TextStyle(
         fontFamily = Sailec,
@@ -54,10 +54,15 @@ val typography = Typography(
         fontWeight = FontWeight.W500,
         fontSize = 14.sp
     ),
+    bodyLarge = TextStyle(
+        fontFamily = Sailec,
+        fontWeight = FontWeight.W500,
+        fontSize = 14.sp
+    ),
     labelMedium = TextStyle(
         fontFamily = Sailec,
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
+        fontSize = 16.sp
     ),
     labelSmall = TextStyle(
         fontFamily = Sailec,

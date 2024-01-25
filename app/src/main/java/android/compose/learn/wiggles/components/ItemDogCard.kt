@@ -4,6 +4,7 @@ import android.compose.learn.wiggles.R
 import android.compose.learn.wiggles.model.Dog
 import android.compose.learn.wiggles.model.Gender
 import android.compose.learn.wiggles.model.Owner
+import android.compose.learn.wiggles.ui.theme.WigglesTheme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -18,27 +19,28 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import typography
 
 @Composable
 fun ItemDogCard(dog: Dog, onClick: (dog: Dog) -> Unit) {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)
+            .fillMaxWidth().height(120.dp)
+            .padding(vertical = 8.dp)
             .clickable(onClick = { onClick(dog) }),
+        shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onSurface)
 
@@ -47,46 +49,34 @@ fun ItemDogCard(dog: Dog, onClick: (dog: Dog) -> Unit) {
 
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(12.dp)
         ) {
             with(dog) {
                 Image(
                     painter = painterResource(id = dog.image),
                     contentDescription = "dog image",
                     modifier = Modifier
-                        .size(80.dp)
+                        .size(80.dp, 80.dp)
                         .clip(
-                            RoundedCornerShape(16.dp)
+                            RoundedCornerShape(12.dp)
                         )
+                    , contentScale = ContentScale.Crop
                 )
                 Spacer(Modifier.width(16.dp))
                 Column(verticalArrangement = Arrangement.SpaceBetween) {
                     Text(
                         text = dog.name,
                         color = MaterialTheme.colorScheme.surface,
-                        fontWeight = FontWeight.Bold,
-                        style = typography.labelMedium
+                        style = typography.labelMedium.copy(fontSize = 16.sp,)
                     )
+                    Spacer(modifier = Modifier.height(8.dp))
                     Text(
                         text = "$age yrs | $gender",
                         color = MaterialTheme.colorScheme.surface,
-                        style = typography.labelSmall
+                        style = typography.bodySmall.copy(fontSize = 12.sp)
                     )
-                    Spacer(modifier = Modifier.height(32.dp))
-                    Row {
-                        Icon(
-                            painter = painterResource(id = R.drawable.ic_location),
-                            contentDescription = "location icon",
-                            modifier = Modifier.size(16.dp),
-                            tint = Color.Red
-                        )
-                        Text(
-                            text = location,
-                            style = typography.labelSmall,
-                            color = MaterialTheme.colorScheme.surface,
-                            modifier = Modifier.padding(start = 8.dp)
-                        )
-                    }
+                    Spacer(modifier = Modifier.weight(1.0f))
+                    Distance(location)
 
                 }
                 Spacer(modifier = Modifier.weight(1.0F))
@@ -95,11 +85,8 @@ fun ItemDogCard(dog: Dog, onClick: (dog: Dog) -> Unit) {
                     verticalArrangement = Arrangement.SpaceBetween,
                     modifier = Modifier.height(80.dp)
                 ) {
-                    GenderTag(name = gender)
-                    Text(
-                        text = "12 min ago", style = typography.labelSmall,
-                        color = MaterialTheme.colorScheme.surface,
-                    )
+                    GenderTag(gender = gender)
+                    TimeUploaded()
                 }
 
             }
@@ -123,5 +110,8 @@ fun ItemDogCardPreview() {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
         owner
     )
-    ItemDogCard(dog = dog, onClick = { dog -> {} })
+    WigglesTheme {
+
+    ItemDogCard(dog = dog, onClick = { })
+    }
 }

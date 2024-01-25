@@ -6,7 +6,7 @@ import android.compose.learn.wiggles.model.Gender
 import android.compose.learn.wiggles.model.Owner
 
 object FakeDogDatabase {
-    private val owner = Owner(
+    val owner = Owner(
         "Medarda",
         "Developer & Pet Lover",
         R.drawable.owner

@@ -25,3 +25,16 @@ l
 <app/src/main/java/android/compose/learn/wiggles/WiggleApp.kt,1\5\1584e95e6a7c4266e7e6055196cd51b0bd67b0f8
 r
 Bapp/src/main/java/android/compose/learn/wiggles/home/HomeScreen.kt,d\e\de0fdcd405352e49194a358e3ca73622af0db59b
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+v
+Fapp/src/main/java/android/compose/learn/wiggles/components/Distance.kt,c\3\c3047e53740fb3774574734f719ae5ef929eb9e2
+z
+Japp/src/main/java/android/compose/learn/wiggles/components/TimeUploaded.kt,4\a\4a49a6117afc94404ba4572e244dfd9e2241c4c6
+v
+Fapp/src/main/java/android/compose/learn/wiggles/components/InfoCard.kt,6\c\6c9592c0f8feca193d5afcdec158c2d3623c96a8
+|
+Lapp/src/main/java/android/compose/learn/wiggles/dogDetail/DogDetailScreen.kt,c\0\c09291bacc72a1eb5151d8fb9205a25e5d35dc42

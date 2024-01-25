@@ -2,11 +2,14 @@ package android.compose.learn.wiggles.components
 
 import android.compose.learn.wiggles.R
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -17,15 +20,19 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import typography
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar() {
-    TopAppBar(title = {
+    LargeTopAppBar(
+
+        title = {
         Column {
             Text(
                 text = "Hey Mowa",
@@ -34,12 +41,12 @@ fun TopBar() {
             )
             Text(
                 text = "Adopt a new friend near you!",
-                style = typography.bodyMedium,
+                style = typography.bodyMedium.copy(fontSize = 16.sp),
                 color = MaterialTheme.colorScheme.surface
             )
         }
     }, colors = TopAppBarDefaults.topAppBarColors(
-        containerColor = MaterialTheme.colorScheme.onBackground,
+        containerColor = MaterialTheme.colorScheme.background,
 
         ), actions = {
 
