@@ -1,38 +1,25 @@
-![logo SVG](assets/images/svg/Logo.svg)
+ <div>
+     <img src="github_cover/wiggles.png" width="50px">  
+   </div>
 
-# Event Booking App
-
-This is a Flutter-based mobile application for booking and managing events. Whether you're organizing conferences, concerts, or local meetups, this app provides a convenient platform for both event organizers and attendees. Built with Flutter and powered by Firebase, it offers a seamless and real-time experience for users.
-
+# Wiggles
+Wiggles is a small project to practice and learn Android development, using jetpack Compose and Kotlin
 ## Features
 
-- **User Registration and Authentication**: Users can create accounts, sign in securely, and manage their profiles.
+- **Jetpack Compose**: An Android API that helps you build ui components and integartion.
 
-- **Event Creation**: Event organizers can easily create and publish events with details such as date, time, location, and event description.
+- **NavHost**: used for navigation and past info between screens.
 
-- **Event Booking**: Attendees can browse and search for events, view event details, and book tickets directly within the app.
+- **Using LazyColumn**: a simples column used to organize the screens components.
 
-- **Ticket Management**: Users can access their booked tickets, view event QR codes, and check-in at the event venue.
-
-- **Event Notifications**: Users receive notifications about event updates, reminders, and important announcements.
-
-- **User Reviews and Ratings**: Attendees can leave reviews and ratings for events they've attended, providing valuable feedback to organizers.
+## Thank You
+A big thank you to [Sanju S](https://github.com/Spikeysanju) for the design and development, it was a great inspiration and great study material.
 
 ## Getting Started
 
-To run this app locally and explore its codebase, follow these steps:
-
-1. Clone the repository:
+Clone the repository:
    ```bash
-   https://github.com/lauro-silva44/rola_app.git
-   ```
-2. Install dependencies:
-   ```bash
-   flutter pub get
-   ```
-3. Run the app:
-   ```bash
-   flutter run
+   https://github.com/lauro-silva44/wiggles_jetpack_compose
    ```
    <div align="center" >
      <img src="github_cover/cover.png" width="100%">
